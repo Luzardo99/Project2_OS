@@ -79,13 +79,13 @@ void read_sub(char* sub_dir, char **argv)
         if(sign == '-'){
             char* substr = input + 1;
             int num = atoi(substr);
-            if(num < differenceTime){
+            if(num > differenceTime){
                 printf("%s\n", temp_full_path);
             }     
         }else if(sign == '+'){
             char* substr = input + 1;
             int num = atoi(substr);
-            if(num > differenceTime){
+            if(num < differenceTime){
                 printf("%s\n", temp_full_path);
             }
         }else{
