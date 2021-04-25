@@ -12,6 +12,7 @@
 #include <sys/stat.h>
 #include <dirent.h>
 #include <string.h>
+#include <time.h>
 char * full_path;
 
 
@@ -49,7 +50,7 @@ void read_sub(char* sub_dir, char **argv)
     long iNode;
 
     if(stat(temp_full_path, &buffer) == 0){
-        //Get name, inode, last modifed time, etc.
+    
         iNode = buffer.st_ino;
         }
     else{
@@ -57,26 +58,29 @@ void read_sub(char* sub_dir, char **argv)
         }
 
 
-    if( retname == 0 ){
-       retfile = strcmp(argv[3],temp_sub);
-       if(retfile == 0){
-           printf("%s\n", temp_full_path);
-       }
+    if(argv[2] = NULL){
+        printf("%s\n", temp_full_path);
     }
-    // else if( retmin == 0 ){
+    // if( retname == 0 ){
     //    retfile = strcmp(argv[3],temp_sub);
     //    if(retfile == 0){
     //        printf("%s\n", temp_full_path);
     //    }
     // }
-    else if( retnode == 0 ){
-        int id = atoi(argv[3]);
-       if( id == iNode){
+    if( retmin == 0 ){
+       retfile = strcmp(argv[3],temp_sub);
+       if(retfile == 0){
            printf("%s\n", temp_full_path);
        }
-    }else{
-        printf("%s\n", temp_full_path);
     }
+    // else if( retnode == 0 ){
+    //     int id = atoi(argv[3]);
+    //    if( id == iNode){
+    //        printf("%s\n", temp_full_path);
+    //    }
+    // }else{
+    //     printf("%s\n", temp_full_path);
+    // }
     
     
 
