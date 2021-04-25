@@ -76,11 +76,11 @@ void read_sub(char* sub_dir, char **argv)
     }
     else if( retmin == 0 ){
         char sign = input[0];
-        retneg = strcmp(sign,"-"); 
-        retpos = strcmp(sign,"+");  
-        if(retneg == 0){
+        // retneg = strcmp(sign,"-"); 
+        // retpos = strcmp(sign,"+");  
+        if(sign == '-'){
             printf("less than");
-        }else if(retpos == 0){
+        }else if(sign == '+'){
             printf("greater than");
         }else{
             printf("exactly");
