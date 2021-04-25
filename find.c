@@ -76,9 +76,13 @@ void read_sub(char* sub_dir, char **argv)
        }
     }
     else if( retmin == 0 ){
-       retfile = strcmp(argv[3],temp_sub);
-       if(retfile == 0){
-           printf("%s\n", temp_full_path);
+        if(input[0] == "-"){
+            printf("less than");
+        }else if(input[0] == "+"){
+            printf("greater than");
+        }else{
+            printf("exactly");
+        }
        }
     }
     else if( retnode == 0 ){
