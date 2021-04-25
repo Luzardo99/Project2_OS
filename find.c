@@ -56,7 +56,7 @@ void read_sub(char* sub_dir, char **argv)
         printf("Unable to get the stats of the file: %s", temp_full_path);
         }
 
-    printf("%lu\n", iNode);
+    //printf("%lu\n", iNode);
 
     if( retname == 0 ){
        retfile = strcmp(argv[3],temp_sub);
@@ -71,13 +71,13 @@ void read_sub(char* sub_dir, char **argv)
        }
     }
     else if( retnode == 0 ){
-       retfile = strcmp(argv[3],temp_sub);
-       if(retfile == 0){
+       if(argv[3] == iNode){
            printf("%s\n", temp_full_path);
        }
     }else{
         printf("%s\n", temp_full_path);
     }
+    
     
 
 
