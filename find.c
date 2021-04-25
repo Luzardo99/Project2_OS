@@ -43,11 +43,17 @@ void read_sub(char* sub_dir, char **argv)
     int retmin = strcmp(argv[2],"-mmin"); 
     int retnode = strcmp(argv[2],"-inum");
     int retfile;
-    char* searchname = strcat("/",argv[3]);
-  
+    char *searchname = strcat(argv[3],temp);
 
     if( retname == 0 ){
        retfile = strcmp(searchname,temp_sub);
+       if(retfile == 0){
+           printf("%s\n", temp_full_path);
+       }
+    }
+
+    if( retmin == 0 ){
+       retfile = strcmp(argv[3],temp_sub);
        if(retfile == 0){
            printf("%s\n", temp_full_path);
        }
