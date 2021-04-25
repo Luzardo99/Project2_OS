@@ -63,7 +63,7 @@ void read_sub(char* sub_dir, char **argv)
     // printf("Current Time: %s", now);
     // printf("Last Mod %s", lastmod);
     // printf("Difference:");
-    // printf("%d\n", differenceTime);
+    printf("%f\n", differenceTime);
 
 
 
