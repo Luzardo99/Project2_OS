@@ -76,14 +76,24 @@ void read_sub(char* sub_dir, char **argv)
     }
     else if( retmin == 0 ){
         char sign = input[0];
-        // retneg = strcmp(sign,"-"); 
-        // retpos = strcmp(sign,"+");  
         if(sign == '-'){
-            printf("less than");
+            char* substr = input + 1;
+            int num = atoi(substr);
+            if(num < differenceTime){
+                printf("%s\n", temp_full_path);
+            }     
         }else if(sign == '+'){
-            printf("greater than");
+            char* substr = input + 1;
+            int num = atoi(substr);
+            if(num > differenceTime){
+                printf("%s\n", temp_full_path);
+            }
         }else{
-            printf("exactly");
+            int num = atoi(input);
+            if(num == differenceTime){
+                printf("%s\n", temp_full_path);
+            }
+            
         }
        }
     else if( retnode == 0 ){
