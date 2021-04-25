@@ -39,9 +39,17 @@ void read_sub(char* sub_dir, char **argv)
 	char * temp_full_path=malloc(sizeof(char)*2000);
 	temp_full_path=strcpy(temp_full_path,sub_dir);
 	strcat(temp_full_path,temp_sub);
-    if (argv[2] == "-n"){
+    int ret = strcmp(argv[2],"-name")
+    int ret2 = strcmp(argv[3],"test")
+
+    if (ret == 0){
           printf("sup bitch");
     }
+    if (ret2 == 0){
+          printf("sup bitchass mofo");
+    }
+
+
     //printf("%s\n", temp_full_path);
  	DIR * subsubdp=opendir(temp_full_path);
 	if(subsubdp!=NULL){
