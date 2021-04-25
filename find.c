@@ -84,7 +84,6 @@ void read_sub(char* sub_dir, char **argv)
             printf("exactly");
         }
        }
-    }
     else if( retnode == 0 ){
         int id = atoi(argv[3]);
        if( id == iNode){
