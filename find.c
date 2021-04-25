@@ -39,8 +39,8 @@ void read_sub(char* sub_dir, char **argv)
 	char * temp_full_path=malloc(sizeof(char)*2000);
 	temp_full_path=strcpy(temp_full_path,sub_dir);
 	strcat(temp_full_path,temp_sub);
-    int ret = strcmp(argv[2],"-name")
-    int ret2 = strcmp(argv[3],"test")
+    int ret = strcmp(argv[2],"-name");
+    int ret2 = strcmp(argv[3],"test");
 
     if (ret == 0){
           printf("sup bitch");
