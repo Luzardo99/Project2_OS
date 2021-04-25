@@ -67,7 +67,7 @@ void read_sub(char* sub_dir, char **argv)
 
 
 
-    
+if(argc == 4){
     if( retname == 0 ){
        retfile = strcmp(argv[3],temp_sub);
        if(retfile == 0){
@@ -101,7 +101,8 @@ void read_sub(char* sub_dir, char **argv)
        if( id == iNode){
            printf("%s\n", temp_full_path);
        }
-    }else{
+    }
+}else{
         printf("%s\n", temp_full_path);
     }
     
