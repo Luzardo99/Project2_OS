@@ -70,7 +70,8 @@ void read_sub(char* sub_dir, char **argv)
     //    }
     // }
     if( retnode == 0 ){
-       if((int)argv[3] == iNode){
+        int id = atoi(argv[3]);
+       if( id == iNode){
            printf("%s\n", temp_full_path);
        }
     }else{
