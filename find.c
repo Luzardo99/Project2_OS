@@ -46,7 +46,7 @@ void read_sub(char* sub_dir, char **argv)
 
     if( retname == 0 ){
        retfile = strcmp(argv[2],temp_sub);
-        printf("%i\n", retfile;
+        printf("%i\n"), retfile;
        if(retfile == 0){
            printf("%s\n", temp_full_path);
        }
