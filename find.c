@@ -15,7 +15,7 @@
 char * full_path;
 
 
-void read_sub(char* sub_dir)
+void read_sub(char* sub_dir, char **argv)
 {
   DIR *sub_dp=opendir(sub_dir);
   struct dirent * sub_dirp;
@@ -39,8 +39,6 @@ void read_sub(char* sub_dir)
 	char * temp_full_path=malloc(sizeof(char)*2000);
 	temp_full_path=strcpy(temp_full_path,sub_dir);
 	strcat(temp_full_path,temp_sub);
-    
-    char* argv[];
     if (argv[3] == "-name"){
           printf("sup bitch");
     }
@@ -73,7 +71,7 @@ int main(int argc, char **argv)
     {
 	dir=argv[1];	
     }
-    read_sub(dir);
+    read_sub(dir,argv);
 
     exit(0);
 }
