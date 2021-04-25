@@ -71,8 +71,7 @@ void read_sub(char* sub_dir, char **argv)
        }
     }
     else if( retnode == 0 ){
-        printf("%s%s\n", argv[3], iNode);
-       if(argv[3] == iNode){
+       if((int)argv[3] == iNode){
            printf("%s\n", temp_full_path);
        }
     }else{
