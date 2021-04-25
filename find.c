@@ -75,8 +75,9 @@ void read_sub(char* sub_dir, char **argv)
        }
     }
     else if( retmin == 0 ){
-        retneg = strcmp(input[0],"-"); 
-        retpos = strcmp(input[0],"+");  
+        char sign = input[0];
+        retneg = strcmp(sign,"-"); 
+        retpos = strcmp(sign,"+");  
         if(retneg == 0){
             printf("less than");
         }else if(retpos == 0){
