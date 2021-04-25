@@ -43,7 +43,7 @@ void read_sub(char* sub_dir, char **argv)
     int retmin = strcmp(argv[2],"-mmin"); 
     int retnode = strcmp(argv[2],"-inum");
     int retfile;
-    string searchname = strcar("/",argv[3];
+    char* searchname = strcar("/",argv[3];
   
 
     if( retname == 0 ){
