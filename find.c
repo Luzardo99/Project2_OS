@@ -39,7 +39,7 @@ void read_sub(char* sub_dir)
 	char * temp_full_path=malloc(sizeof(char)*2000);
 	temp_full_path=strcpy(temp_full_path,sub_dir);
 	strcat(temp_full_path,temp_sub);
-    printf("%s\n", temp_full_path);
+    //printf("%s\n", temp_full_path);
  	DIR * subsubdp=opendir(temp_full_path);
 	if(subsubdp!=NULL){
 	closedir(subsubdp);
