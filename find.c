@@ -44,7 +44,19 @@ void read_sub(char* sub_dir, char **argv)
     int retnode = strcmp(argv[2],"-inum");
     int retfile;
 
+    struct stat buffer;
+    stat(temp_full_path, &buffer); 
+    long iNode;
 
+    if(stat(temp_full_path, &buffer) == 0){
+        //Get name, inode, last modifed time, etc.
+        iNode = buffer.st_ino;
+        }
+    else{
+        printf("Unable to get the stats of the file: %s", temp_full_path);
+        }
+
+    printf("%lu\n", iNode);
 
     if( retname == 0 ){
        retfile = strcmp(argv[3],temp_sub);
