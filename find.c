@@ -41,7 +41,7 @@ void read_sub(char* sub_dir)
 	strcat(temp_full_path,temp_sub);
     
 
-    if (string argv[3] == "-name"){
+    if (char* argv[3] == "-name"){
           printf("sup bitch");
     }
     printf("%s\n", temp_full_path);
