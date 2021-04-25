@@ -61,10 +61,7 @@ void read_sub(char* sub_dir, char **argv)
     double differenceTime = difftime(now,lastmod);
     differenceTime = differenceTime/60;
 
-
-    printf("%f\n", differenceTime);
     char *input = argv[3];
-    printf("%s\n", input);
 
 
 
@@ -76,9 +73,11 @@ void read_sub(char* sub_dir, char **argv)
        }
     }
     else if( retmin == 0 ){
-        if(input[0] == "-"){
+        retneg = strcmp(input[0],"-"); 
+        retpos = strcmp(input[0],"+");  
+        if(retneg == 0){
             printf("less than");
-        }else if(input[0] == "+"){
+        }else if(retpos == 0){
             printf("greater than");
         }else{
             printf("exactly");
