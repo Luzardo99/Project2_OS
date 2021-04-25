@@ -68,26 +68,26 @@ void read_sub(char* sub_dir, char **argv)
 
 
     
-    // if( retname == 0 ){
-    //    retfile = strcmp(argv[3],temp_sub);
-    //    if(retfile == 0){
-    //        printf("%s\n", temp_full_path);
-    //    }
-    // }
-    // if( retmin == 0 ){
-    //    retfile = strcmp(argv[3],temp_sub);
-    //    if(retfile == 0){
-    //        printf("%s\n", temp_full_path);
-    //    }
-    // }
-    // else if( retnode == 0 ){
-    //     int id = atoi(argv[3]);
-    //    if( id == iNode){
-    //        printf("%s\n", temp_full_path);
-    //    }
-    // }else{
-    //     printf("%s\n", temp_full_path);
-    // }
+    if( retname == 0 ){
+       retfile = strcmp(argv[3],temp_sub);
+       if(retfile == 0){
+           printf("%s\n", temp_full_path);
+       }
+    }
+    else if( retmin == 0 ){
+       retfile = strcmp(argv[3],temp_sub);
+       if(retfile == 0){
+           printf("%s\n", temp_full_path);
+       }
+    }
+    else if( retnode == 0 ){
+        int id = atoi(argv[3]);
+       if( id == iNode){
+           printf("%s\n", temp_full_path);
+       }
+    }else{
+        printf("%s\n", temp_full_path);
+    }
     
     
 
