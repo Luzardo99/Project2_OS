@@ -48,16 +48,21 @@ void read_sub(char* sub_dir, char **argv)
     struct stat buffer;
     stat(temp_full_path, &buffer); 
     long iNode;
+    time_t lastmod;
+    time_t now = time(0);
 
     if(stat(temp_full_path, &buffer) == 0){
-    
+        lastmod = buffer.st_mtime;
         iNode = buffer.st_ino;
-        }
-    else{
+    }else{
         printf("Unable to get the stats of the file: %s", temp_full_path);
         }
+    
+    differenceTime = diffTime(now,lastmod);
+    printf("%s\n", differenceTime);
 
-    printf("%s\n", argv[2]);
+
+
     
     // if( retname == 0 ){
     //    retfile = strcmp(argv[3],temp_sub);
