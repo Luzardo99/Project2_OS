@@ -44,6 +44,8 @@ void read_sub(char* sub_dir, char **argv)
     int retmin = strcmp(argv[2],"-mmin"); 
     int retnode = strcmp(argv[2],"-inum");
     int retfile;
+    int retneg;
+    int retpos;
 
     struct stat buffer;
     stat(temp_full_path, &buffer); 
