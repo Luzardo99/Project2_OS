@@ -42,11 +42,13 @@ void read_sub(char* sub_dir, char **argv)
     int retname = strcmp(argv[2],"-name");
     int retmin = strcmp(argv[2],"-mmin"); 
     int retnode = strcmp(argv[2],"-inum");
-    int retnull = strcmp(argv[2],NULL);
+    int retfile;
 
-    if( retnull == 0){
-        printf("sup mofo");
-    }
+    //if( retname == 0 ){
+       // retfile = strcmp(argv[2],)
+    //}
+    printf("%s\n", temp_sub);
+
 
 
     //printf("%s\n", temp_full_path);
