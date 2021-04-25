@@ -45,6 +45,7 @@ void read_sub(char* sub_dir, char **argv)
     int retfile;
     char *searchname = strcat(argv[3],temp);
 
+    printf("%s\n", searchname);
     if( retname == 0 ){
        retfile = strcmp(searchname,temp_sub);
        if(retfile == 0){
