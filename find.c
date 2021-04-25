@@ -58,8 +58,8 @@ void read_sub(char* sub_dir, char **argv)
         printf("Unable to get the stats of the file: %s", temp_full_path);
         }
     
-    differenceTime = diffTime(now,lastmod);
-    printf("%s\n", differenceTime);
+    double differenceTime = diffTime(now,lastmod);
+    printf("%d\n", differenceTime);
 
 
 
