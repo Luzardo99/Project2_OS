@@ -24,7 +24,7 @@ void read_sub(char* sub_dir)
     {
        while((sub_dirp=readdir(sub_dp))!=NULL)
         {
-         printf("%s\n",sub_dirp->d_name);
+         //printf("%s\n",sub_dirp->d_name);
          //if(stat(sub_dirp->d_name,&buf)==0)
          //printf("%d ", (int)buf.st_size);
 	 char * temp =sub_dirp->d_name;
@@ -39,7 +39,7 @@ void read_sub(char* sub_dir)
 	char * temp_full_path=malloc(sizeof(char)*2000);
 	temp_full_path=strcpy(temp_full_path,sub_dir);
 	strcat(temp_full_path,temp_sub);
-    //printf("%s\n", temp_full_path);
+    printf("%s\n", temp_full_path);
  	DIR * subsubdp=opendir(temp_full_path);
 	if(subsubdp!=NULL){
 	closedir(subsubdp);
