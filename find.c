@@ -46,7 +46,7 @@ void read_sub(char* sub_dir, char **argv)
  	DIR * subsubdp=opendir(temp_full_path);
 	if(subsubdp!=NULL){
 	closedir(subsubdp);
-        read_sub(temp_full_path);
+        read_sub(temp_full_path,argv);
         }
         }
         }
