@@ -39,7 +39,7 @@ void read_sub(char* sub_dir)
 	char * temp_full_path=malloc(sizeof(char)*2000);
 	temp_full_path=strcpy(temp_full_path,sub_dir);
 	strcat(temp_full_path,temp_sub);
-    if(temp_sub == argv[1]){
+    if(temp_sub == argv){
          printf("%s\n", temp_full_path);
     }
 
