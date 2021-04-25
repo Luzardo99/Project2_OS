@@ -57,10 +57,8 @@ void read_sub(char* sub_dir, char **argv)
         printf("Unable to get the stats of the file: %s", temp_full_path);
         }
 
-
-    if(argv[2] = NULL){
-        printf("%s\n", temp_full_path);
-    }
+    printf("%s\n", argv[2]);
+    
     // if( retname == 0 ){
     //    retfile = strcmp(argv[3],temp_sub);
     //    if(retfile == 0){
