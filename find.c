@@ -60,10 +60,10 @@ void read_sub(char* sub_dir, char **argv)
     
     double differenceTime = difftime(now,lastmod);
 
-    printf("Current Time: %s", now);
-    printf("Last Mod %s", lastmod);
-    printf("Difference:");
-    printf("%d\n", differenceTime);
+    // printf("Current Time: %s", now);
+    // printf("Last Mod %s", lastmod);
+    // printf("Difference:");
+    // printf("%d\n", differenceTime);
 
 
 
