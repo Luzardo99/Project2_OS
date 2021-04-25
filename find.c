@@ -39,14 +39,13 @@ void read_sub(char* sub_dir, char **argv)
 	char * temp_full_path=malloc(sizeof(char)*2000);
 	temp_full_path=strcpy(temp_full_path,sub_dir);
 	strcat(temp_full_path,temp_sub);
-    int ret = strcmp(argv[2],"-name");
-    int ret2 = strcmp(argv[3],"test");
+    int retname = strcmp(argv[2],"-name");
+    int retmin = strcmp(argv[2],"-mmin"); 
+    int retnode = strcmp(argv[2],"-inum");
+    int retnull = strcmp(argv[2],NULL);
 
-    if (ret == 0){
-          printf("sup bitch");
-    }
-    if (ret2 == 0){
-          printf("sup bitchass mofo");
+    if( retnull == 0){
+        printf("sup mofo");
     }
 
 
