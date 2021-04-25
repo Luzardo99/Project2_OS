@@ -42,8 +42,8 @@ void read_sub(char* sub_dir, char **argv)
     if (argv[3] == "-n"){
           printf("sup bitch");
     }
-    printf("sup bitch");
-    printf("%s\n", temp_full_path);
+    //printf("%s\n", temp_full_path);
+    printf("%s\n", argv[3]);
  	DIR * subsubdp=opendir(temp_full_path);
 	if(subsubdp!=NULL){
 	closedir(subsubdp);
