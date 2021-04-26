@@ -95,7 +95,7 @@ void read_sub(char* sub_dir, char **argv, int argc)
             }
 
     }
-    else if(argc == 4){
+    else if(argc == 3){
         if(strcmp(argv[4],"-name")== 0){
             if(strcmp(argv[3],temp_sub)== 0){
                 printf("%s\n", temp_full_path);
