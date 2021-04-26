@@ -40,12 +40,7 @@ void read_sub(char* sub_dir, char **argv, int argc)
 	char * temp_full_path=malloc(sizeof(char)*2000);
 	temp_full_path=strcpy(temp_full_path,sub_dir);
 	strcat(temp_full_path,temp_sub);
-    int retname = strcmp(argv[2],"-name");
-    int retmin = strcmp(argv[2],"-mmin"); 
-    int retnode = strcmp(argv[2],"-inum");
-    int retfile;
-    int retneg;
-    int retpos;
+   
 
     struct stat buffer;
     stat(temp_full_path, &buffer); 
@@ -63,11 +58,19 @@ void read_sub(char* sub_dir, char **argv, int argc)
     double differenceTime = difftime(now,lastmod);
     differenceTime = differenceTime/60;
 
-    char *input = argv[3];
+    
 
 
 
 if(argc == 4){
+    int retname = strcmp(argv[2],"-name");
+    int retmin = strcmp(argv[2],"-mmin"); 
+    int retnode = strcmp(argv[2],"-inum");
+    int retfile;
+    int retneg;
+    int retpos;
+    char *input = argv[3];
+
     if( retname == 0 ){
        retfile = strcmp(argv[3],temp_sub);
        if(retfile == 0){
