@@ -16,7 +16,7 @@
 char * full_path;
 
 
-void read_sub(char* sub_dir, char **argv)
+void read_sub(char* sub_dir, char **argv, int argc)
 {
   DIR *sub_dp=opendir(sub_dir);
   struct dirent * sub_dirp;
@@ -114,7 +114,7 @@ if(argc == 4){
  	DIR * subsubdp=opendir(temp_full_path);
 	if(subsubdp!=NULL){
 	closedir(subsubdp);
-        read_sub(temp_full_path,argv);
+        read_sub(temp_full_path,argv,argc);
         }
         }
         }
@@ -139,7 +139,7 @@ int main(int argc, char **argv)
     {
 	dir=argv[1];	
     }
-    read_sub(dir,argv);
+    read_sub(dir,argv,argc);
 
     exit(0);
 }
