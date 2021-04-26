@@ -59,12 +59,12 @@ void read_sub(char* sub_dir, char **argv, int argc)
     
 
     if(argc == 5 && strcmp(argv[4],"-delete")==0){
-        if(strcmp(argv[4],"-name")== 0){
+        if(strcmp(argv[2],"-name")== 0){
             if(strcmp(argv[3],temp_sub)== 0){
                 remove(temp_full_path);
             }
         }
-        else if(strcmp(argv[4],"-mmin")== 0){
+        else if(strcmp(argv[2],"-mmin")== 0){
                 char *input = argv[3];
                 char sign = input[0];
                 if(sign == '-'){
@@ -87,7 +87,7 @@ void read_sub(char* sub_dir, char **argv, int argc)
                     
                 }
             }
-        else if(strcmp(argv[4],"-inum")== 0){
+        else if(strcmp(argv[2],"-inum")== 0){
                 int id = atoi(argv[3]);
             if( id == iNode){
                 remove(temp_full_path);
@@ -95,13 +95,13 @@ void read_sub(char* sub_dir, char **argv, int argc)
             }
 
     }
-    else if(argc == 3){
-        if(strcmp(argv[4],"-name")== 0){
+    else if(argc == 4){
+        if(strcmp(argv[2],"-name")== 0){
             if(strcmp(argv[3],temp_sub)== 0){
                 printf("%s\n", temp_full_path);
             }
         }
-        else if(strcmp(argv[4],"-mmin")== 0){
+        else if(strcmp(argv[2],"-mmin")== 0){
                 char *input = argv[3];
                 char sign = input[0];
                 if(sign == '-'){
@@ -124,7 +124,7 @@ void read_sub(char* sub_dir, char **argv, int argc)
                     
                 }
             }
-        else if(strcmp(argv[4],"-inum")== 0){
+        else if(strcmp(argv[2],"-inum")== 0){
                 int id = atoi(argv[3]);
             if( id == iNode){
                 printf("%s\n", temp_full_path);
