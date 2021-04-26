@@ -25,9 +25,7 @@ void read_sub(char* sub_dir, char **argv, int argc)
     {
        while((sub_dirp=readdir(sub_dp))!=NULL)
         {
-         //printf("%s\n",sub_dirp->d_name);
-         //if(stat(sub_dirp->d_name,&buf)==0)
-         //printf("%d ", (int)buf.st_size);
+   
 	 char * temp =sub_dirp->d_name;
          char temp1[]=".";
 	 char temp2[]="..";
@@ -60,52 +58,79 @@ void read_sub(char* sub_dir, char **argv, int argc)
 
     
 
-
-
-if(argc == 4){
-    int retname = strcmp(argv[2],"-name");
-    int retmin = strcmp(argv[2],"-mmin"); 
-    int retnode = strcmp(argv[2],"-inum");
-    int retfile;
-    int retneg;
-    int retpos;
-    char *input = argv[3];
-
-    if( retname == 0 ){
-       retfile = strcmp(argv[3],temp_sub);
-       if(retfile == 0){
-           printf("%s\n", temp_full_path);
-       }
-    }
-    else if( retmin == 0 ){
-        char sign = input[0];
-        if(sign == '-'){
-            char* substr = input + 1;
-            int num = atoi(substr);
-            if(num > differenceTime){
-                printf("%s\n", temp_full_path);
-            }     
-        }else if(sign == '+'){
-            char* substr = input + 1;
-            int num = atoi(substr);
-            if(num < differenceTime){
-                printf("%s\n", temp_full_path);
+    if(argc == 5 && strcmp(argv[4],"-delete")==0){
+        if(strcmp(argv[4],"-name")== 0){
+            if(strcmp(argv[3],temp_sub)== 0){
+                remove(temp_full_path);
             }
-        }else{
-            int num = atoi(input);
-            if(num == differenceTime){
-                printf("%s\n", temp_full_path);
-            }
-            
         }
-       }
-    else if( retnode == 0 ){
-        int id = atoi(argv[3]);
-       if( id == iNode){
-           printf("%s\n", temp_full_path);
-       }
+        else if(strcmp(argv[4],"-mmin")== 0){
+                char *input = argv[3];
+                char sign = input[0];
+                if(sign == '-'){
+                    char* substr = input + 1;
+                    int num = atoi(substr);
+                    if(num > differenceTime){
+                        remove(temp_full_path);
+                    }     
+                }else if(sign == '+'){
+                    char* substr = input + 1;
+                    int num = atoi(substr);
+                    if(num < differenceTime){
+                        remove(temp_full_path);
+                    }
+                }else{
+                    int num = atoi(input);
+                    if(num == differenceTime){
+                        remove(temp_full_path);
+                    }
+                    
+                }
+            }
+        else if(strcmp(argv[4],"-inum")== 0){
+                int id = atoi(argv[3]);
+            if( id == iNode){
+                remove(temp_full_path);
+            }
+            }
+
     }
-}else{
+    else if(argc == 4){
+        if(strcmp(argv[4],"-name")== 0){
+            if(strcmp(argv[3],temp_sub)== 0){
+                printf("%s\n", temp_full_path);
+            }
+        }
+        else if(strcmp(argv[4],"-mmin")== 0){
+                char *input = argv[3];
+                char sign = input[0];
+                if(sign == '-'){
+                    char* substr = input + 1;
+                    int num = atoi(substr);
+                    if(num > differenceTime){
+                        printf("%s\n", temp_full_path);
+                    }     
+                }else if(sign == '+'){
+                    char* substr = input + 1;
+                    int num = atoi(substr);
+                    if(num < differenceTime){
+                        printf("%s\n", temp_full_path);
+                    }
+                }else{
+                    int num = atoi(input);
+                    if(num == differenceTime){
+                        printf("%s\n", temp_full_path);
+                    }
+                    
+                }
+            }
+        else if(strcmp(argv[4],"-inum")== 0){
+                int id = atoi(argv[3]);
+            if( id == iNode){
+                printf("%s\n", temp_full_path);
+            }
+            }
+    }else{
         printf("%s\n", temp_full_path);
     }
     
@@ -129,6 +154,10 @@ if(argc == 4){
         exit(2);
     }
 
+}
+
+void delete(){
+    
 }
 
 int main(int argc, char **argv)
